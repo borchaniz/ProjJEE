@@ -3,6 +3,7 @@ package com.insat.gestionformation.controllers;
 import com.insat.gestionformation.models.Event;
 import com.yan.gestionformation.Services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,12 +14,10 @@ import javax.validation.Valid;
 
 @Controller
 public class EventController {
-@Autowired
-    public void setEventService(EventService eventService) {
-        this.eventService = eventService;
-    }
-
+    @Autowired
     EventService eventService;
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
     @RequestMapping(value = "/addevent", method = RequestMethod.GET)
     public String addevent(Event event){
         return "addevent";
