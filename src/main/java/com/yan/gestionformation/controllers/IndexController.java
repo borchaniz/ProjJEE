@@ -10,11 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController{
 
-    @RequestMapping(value={"/"}, method = RequestMethod.GET)
-    public ModelAndView index(){
-        ModelAndView m= new ModelAndView();
-        m.setViewName("index");
-        System.out.println("Looking in the index controller.........");
-        return m;
+    @RequestMapping("/")
+    public String index(){
+        return "index";
     }
 }

@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 public class EventServiceImpl implements EventService{
     @Autowired
     private EventRepository eventRepository;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 
     @Override
     public void saveEvent(com.insat.gestionformation.models.Event event){

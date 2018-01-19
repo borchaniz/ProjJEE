@@ -16,8 +16,6 @@ import javax.validation.Valid;
 public class EventController {
     @Autowired
     EventService eventService;
-    @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
     @RequestMapping(value = "/addevent", method = RequestMethod.GET)
     public String addevent(Event event){
         return "addevent";
